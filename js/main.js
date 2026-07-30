@@ -52,19 +52,20 @@ const revealObs = new IntersectionObserver((entries, obs) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 [
-  '.hero-badge', '.hero-title', '.hero-desc', '.hero-cta',
-  '.hero-stats', '.hero-visual', '.feat-card', '.timeline-step',
-  '.os-card', '.profile-card', '.section-label', '.section-heading', '.section-sub'
+  '.tweet-origin-badge', '.hero-title', '.hero-desc', '.hero-cta',
+  '.tweet-stats-bar', '.article-preview-card', '.why-card', '.finding-item',
+  '.market-map-card', '.build-card', '.profile-card', '.original-tweet-card',
+  '.section-label', '.section-heading', '.section-sub'
 ].forEach(sel => {
   document.querySelectorAll(sel).forEach((el, i) => {
     el.classList.add('reveal');
-    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    el.style.transitionDelay = `${(i % 4) * 70}ms`;
     revealObs.observe(el);
   });
 });
 
 // ── Stat counter ─────────────────────────────────
-const statEls = document.querySelectorAll('.stat-n[data-count]');
+const statEls = document.querySelectorAll('.ts-num[data-count]');
 const counterObs = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
@@ -149,35 +150,8 @@ statEls.forEach(el => counterObs.observe(el));
   drawFrame();
 })();
 
-// ── Layer diagram pulse animation ─────────────────
-(function pulseLayer() {
-  const layer = document.querySelector('.teresa-layer');
-  if (!layer) return;
-  let dir = 1, intensity = 0;
-  setInterval(() => {
-    intensity += dir * 0.05;
-    if (intensity >= 1 || intensity <= 0) dir *= -1;
-    layer.style.boxShadow = `0 0 ${20 + intensity * 30}px rgba(0,212,255,${0.04 + intensity * 0.08}), inset 0 0 30px rgba(0,212,255,${0.02 + intensity * 0.04})`;
-  }, 50);
-})();
-
-// ── Providers row stagger animate ────────────────
-document.querySelectorAll('.provider-chip').forEach((chip, i) => {
-  chip.style.animationDelay = `${i * 0.15}s`;
-  chip.addEventListener('mouseenter', () => {
-    chip.style.borderColor = 'rgba(0,212,255,0.5)';
-    chip.style.color = 'var(--cyan)';
-    chip.style.boxShadow = '0 0 16px rgba(0,212,255,0.15)';
-  });
-  chip.addEventListener('mouseleave', () => {
-    chip.style.borderColor = '';
-    chip.style.color = '';
-    chip.style.boxShadow = '';
-  });
-});
-
-// ── Feature card glow on hover ────────────────────
-document.querySelectorAll('.feat-card').forEach(card => {
+// ── Card glow on hover ────────────────────
+document.querySelectorAll('.build-card, .why-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
     const x = ((e.clientX - r.left) / r.width  * 100).toFixed(1);
@@ -185,16 +159,4 @@ document.querySelectorAll('.feat-card').forEach(card => {
     card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(0,212,255,0.04), var(--bg-card-2) 60%)`;
   });
   card.addEventListener('mouseleave', () => { card.style.background = ''; });
-});
-
-// ── Step dot active on scroll ─────────────────────
-document.querySelectorAll('.timeline-step').forEach((step, i) => {
-  new IntersectionObserver(([e]) => {
-    const dot = step.querySelector('.step-dot');
-    if (e.isIntersecting) {
-      dot.style.borderColor = 'var(--cyan)';
-      dot.style.boxShadow   = '0 0 24px rgba(0,212,255,0.4)';
-      dot.style.background  = 'rgba(0,212,255,0.08)';
-    }
-  }, { threshold: 0.7 }).observe(step);
 });
