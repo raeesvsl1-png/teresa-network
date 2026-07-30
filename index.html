@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teresa — AI Trading-Infrastructure built on Robinhood</title>
+  <meta name="description" content="One layer for routing, governance, and control across every AI provider. Open source AI Trading-Infrastructure built on Robinhood." />
+  <meta property="og:title" content="Teresa — AI Trading-Infrastructure" />
+  <meta property="og:description" content="One layer for routing, governance, and control across every AI provider." />
+  <meta property="og:image" content="https://pbs.twimg.com/profile_banners/1639191425761021952/1784158513/1500x500" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@teresa_network" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Teresa home">
+        <img
+          src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg"
+          alt="Teresa"
+          class="logo-avatar"
+          loading="eager"
+          onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';"
+        />
+        <div class="logo-fallback" aria-hidden="true">T</div>
+        <div class="logo-text-group">
+          <span class="logo-name">Teresa</span>
+          <span class="logo-handle">@teresa_network</span>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#features"   class="nav-link">Features</a>
+        <a href="#how"        class="nav-link">How it works</a>
+        <a href="#opensource" class="nav-link">Open Source</a>
+        <a href="#community"  class="nav-link">Community</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-x-follow" id="xFollowBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          Follow
+        </a>
+        <a href="https://github.com/teresa-network" target="_blank" rel="noopener" class="btn-ghost-sm" id="githubBtn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#features"   class="mob-link">Features</a>
+    <a href="#how"        class="mob-link">How it works</a>
+    <a href="#opensource" class="mob-link">Open Source</a>
+    <a href="#community"  class="mob-link">Community</a>
+    <div class="mob-sep"></div>
+    <a href="https://x.com/teresa_network" target="_blank" class="mob-link mob-x">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Follow on X
+    </a>
+  </div>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+      <canvas id="neuralCanvas" class="neural-canvas" aria-hidden="true"></canvas>
+
+      <!-- Banner image as subtle background overlay -->
+      <div class="hero-banner-bg" aria-hidden="true"
+        style="background-image: url('https://pbs.twimg.com/profile_banners/1639191425761021952/1784158513/1500x500')">
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge" id="heroBadge">
+            <span class="badge-pulse" aria-hidden="true"></span>
+            Open Source
+            <span class="badge-sep">·</span>
+            Built on Robinhood
+          </div>
+
+          <h1 class="hero-title">
+            AI Trading<br />
+            <span class="gradient-text">Infrastructure.</span>
+          </h1>
+
+          <p class="hero-desc">
+            One layer for <strong>routing</strong>, <strong>governance</strong>, and <strong>control</strong><br class="br-lg" />
+            across every AI provider.
+          </p>
+
+          <div class="hero-cta">
+            <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-primary-hero" id="heroFollow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Follow on X
+            </a>
+            <a href="https://github.com/teresa-network" target="_blank" rel="noopener" class="btn-outline-hero" id="heroGithub">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-pill">
+              <span class="stat-n" data-count="670">0</span>
+              <span class="stat-l">Followers</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-pill">
+              <span class="stat-n">March 2023</span>
+              <span class="stat-l">Launched</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-pill">
+              <span class="stat-n green-text">Open</span>
+              <span class="stat-l">Source</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="layer-diagram" id="layerDiagram">
+            <div class="layer-title-top">AI Providers</div>
+            <div class="providers-row">
+              <div class="provider-chip">OpenAI</div>
+              <div class="provider-chip">Anthropic</div>
+              <div class="provider-chip">Gemini</div>
+              <div class="provider-chip">Llama</div>
+            </div>
+            <div class="layer-arrows">
+              <svg viewBox="0 0 240 40" width="240" height="40">
+                <line x1="30"  y1="0" x2="120" y2="40" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                <line x1="80"  y1="0" x2="120" y2="40" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                <line x1="160" y1="0" x2="120" y2="40" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                <line x1="210" y1="0" x2="120" y2="40" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="teresa-layer">
+              <div class="teresa-layer-inner">
+                <img
+                  src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg"
+                  alt="Teresa"
+                  class="layer-avatar"
+                  onerror="this.style.display='none'"
+                />
+                <div class="teresa-layer-text">
+                  <div class="teresa-name">Teresa</div>
+                  <div class="teresa-sub">Routing · Governance · Control</div>
+                </div>
+              </div>
+              <div class="layer-badges">
+                <span class="layer-badge">Routing</span>
+                <span class="layer-badge">Governance</span>
+                <span class="layer-badge">Control</span>
+              </div>
+            </div>
+            <div class="layer-arrows-down">
+              <svg viewBox="0 0 240 40" width="240" height="40">
+                <line x1="120" y1="0" x2="60"  y2="40" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+                <line x1="120" y1="0" x2="180" y2="40" stroke="rgba(0,212,255,0.3)" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="brokers-row">
+              <div class="broker-chip active-chip">
+                Robinhood
+              </div>
+              <div class="broker-chip">
+                Exchanges
+              </div>
+            </div>
+            <div class="layer-title-bottom">Execution Layer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-label">Core Capabilities</div>
+        <h2 class="section-heading">One layer. Every provider.</h2>
+        <p class="section-sub">Teresa abstracts complexity across the AI trading stack — so you focus on strategy, not plumbing.</p>
+
+        <div class="features-grid">
+          <div class="feat-card" id="fc1">
+            <div class="feat-icon-wrap cyan-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg>
+            </div>
+            <h3 class="feat-title">Unified Routing</h3>
+            <p class="feat-desc">A single interface to route requests across OpenAI, Anthropic, Gemini, and any AI model — with automatic failover and load balancing.</p>
+            <div class="feat-mono">teresa.route(task, providers)</div>
+          </div>
+
+          <div class="feat-card" id="fc2">
+            <div class="feat-icon-wrap blue-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feat-title">Governance Layer</h3>
+            <p class="feat-desc">Define rules, policies, and access controls across all AI agents. Enforce compliance, rate limits, and spend caps per model or per strategy.</p>
+            <div class="feat-mono">teresa.govern(policy, scope)</div>
+          </div>
+
+          <div class="feat-card" id="fc3">
+            <div class="feat-icon-wrap purple-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feat-title">Full Control</h3>
+            <p class="feat-desc">Real-time observability, audit logs, kill switches, and fine-grained permissions over every AI-driven trade decision.</p>
+            <div class="feat-mono">teresa.control(agent, override)</div>
+          </div>
+
+          <div class="feat-card" id="fc4">
+            <div class="feat-icon-wrap green-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feat-title">Robinhood Native</h3>
+            <p class="feat-desc">Deep integration with Robinhood's execution layer. Route AI-generated signals directly to Robinhood Chain for on-chain settlement.</p>
+            <div class="feat-mono">teresa.execute(signal, robinhood)</div>
+          </div>
+
+          <div class="feat-card" id="fc5">
+            <div class="feat-icon-wrap amber-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feat-title">Real-Time Analytics</h3>
+            <p class="feat-desc">Monitor every AI decision, track latency per provider, compare alpha generation across models with live dashboards.</p>
+            <div class="feat-mono">teresa.observe(stream, metrics)</div>
+          </div>
+
+          <div class="feat-card" id="fc6">
+            <div class="feat-icon-wrap pink-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feat-title">Open Source</h3>
+            <p class="feat-desc">Fully open source. Fork it, extend it, contribute to it. The AI trading infrastructure that belongs to the community.</p>
+            <div class="feat-mono">github.com/teresa-network</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="how-section" id="how">
+      <div class="container">
+        <div class="section-label">Architecture</div>
+        <h2 class="section-heading">How Teresa works</h2>
+
+        <div class="steps-timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <div class="timeline-step" id="ts1">
+            <div class="step-dot" aria-hidden="true"><span>1</span></div>
+            <div class="step-content">
+              <h3>Define Your Strategy</h3>
+              <p>Write your trading logic once using Teresa's unified SDK. No need to handle provider-specific APIs or authentication.</p>
+              <div class="code-snippet">
+                <pre><code><span class="ck">import</span> <span class="cv">{ Teresa }</span> <span class="ck">from</span> <span class="cs">'teresa-sdk'</span><span class="cp">;</span>
+
+<span class="ck">const</span> <span class="cv">agent</span> <span class="co">=</span> <span class="ck">new</span> <span class="cv">Teresa</span><span class="cp">.</span><span class="cv">Agent</span><span class="cp">({</span>
+  <span class="ck">strategy</span><span class="cp">:</span> <span class="cs">'momentum'</span><span class="cp">,</span>
+  <span class="ck">providers</span><span class="cp">:</span> <span class="cp">[</span><span class="cs">'openai'</span><span class="cp">,</span> <span class="cs">'anthropic'</span><span class="cp">],</span>
+  <span class="ck">execution</span><span class="cp">:</span> <span class="cs">'robinhood'</span><span class="cp">,</span>
+<span class="cp">});</span></code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-step" id="ts2">
+            <div class="step-dot" aria-hidden="true"><span>2</span></div>
+            <div class="step-content">
+              <h3>Apply Governance Policies</h3>
+              <p>Set risk parameters, spend limits, and compliance rules. Teresa enforces them across every AI call automatically.</p>
+              <div class="code-snippet">
+                <pre><code><span class="cv">agent</span><span class="cp">.</span><span class="cv">govern</span><span class="cp">({</span>
+  <span class="ck">maxSpend</span><span class="cp">:</span> <span class="cn">500</span><span class="cp">,</span>
+  <span class="ck">allowedTickers</span><span class="cp">:</span> <span class="cp">[</span><span class="cs">'AAPL'</span><span class="cp">,</span> <span class="cs">'NVDA'</span><span class="cp">],</span>
+  <span class="ck">riskProfile</span><span class="cp">:</span> <span class="cs">'conservative'</span><span class="cp">,</span>
+  <span class="ck">auditLog</span><span class="cp">:</span> <span class="cv">true</span><span class="cp">,</span>
+<span class="cp">});</span></code></pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-step" id="ts3">
+            <div class="step-dot" aria-hidden="true"><span>3</span></div>
+            <div class="step-content">
+              <h3>Route & Execute</h3>
+              <p>Teresa routes your AI signal to the optimal provider, then executes via Robinhood with full audit trail and real-time monitoring.</p>
+              <div class="code-snippet">
+                <pre><code><span class="ck">const</span> <span class="cv">signal</span> <span class="co">=</span> <span class="ck">await</span> <span class="cv">agent</span><span class="cp">.</span><span class="cv">analyze</span><span class="cp">(</span><span class="cv">marketData</span><span class="cp">);</span>
+
+<span class="cm">// Auto-routes to best AI provider</span>
+<span class="cm">// Validates against governance rules</span>
+<span class="cm">// Executes on Robinhood if approved</span>
+<span class="ck">await</span> <span class="cv">agent</span><span class="cp">.</span><span class="cv">execute</span><span class="cp">(</span><span class="cv">signal</span><span class="cp">);</span></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OPEN SOURCE ===== -->
+    <section class="opensource-section" id="opensource">
+      <div class="container">
+        <div class="os-card" id="osCard">
+          <div class="os-glow" aria-hidden="true"></div>
+          <div class="os-content">
+            <div class="os-icon" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            </div>
+            <h2 class="os-title">Open Source First.</h2>
+            <p class="os-desc">Teresa is built in the open. Inspect the code, audit the routing logic, submit PRs, or fork it for your own AI trading stack. The infrastructure for AI trading should belong to everyone.</p>
+            <div class="os-actions">
+              <a href="https://github.com/teresa-network" target="_blank" rel="noopener" class="btn-primary-hero" id="osGithubBtn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                Star on GitHub
+              </a>
+              <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-outline-hero">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Follow Updates
+              </a>
+            </div>
+          </div>
+          <div class="os-visual" aria-hidden="true">
+            <div class="terminal-mini">
+              <div class="tm-header">
+                <span class="tm-dot red"></span>
+                <span class="tm-dot yellow"></span>
+                <span class="tm-dot green"></span>
+                <span class="tm-title">bash</span>
+              </div>
+              <div class="tm-body">
+                <div class="tm-line"><span class="tm-prompt">$</span> git clone teresa-network/core</div>
+                <div class="tm-line muted">Cloning into 'core'...</div>
+                <div class="tm-line muted">remote: Enumerating objects...</div>
+                <div class="tm-line success">done.</div>
+                <div class="tm-line"><span class="tm-prompt">$</span> npm install &amp;&amp; npm run dev</div>
+                <div class="tm-line muted">Starting Teresa dev server...</div>
+                <div class="tm-line success">Teresa ready on :3000</div>
+                <div class="tm-line blink-cursor"><span class="tm-prompt">$</span> <span class="cursor">|</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMMUNITY ===== -->
+    <section class="community-section" id="community">
+      <div class="container">
+        <div class="section-label">Community</div>
+        <h2 class="section-heading">Join the conversation.</h2>
+        <p class="section-sub">Stay updated with the latest builds, discussions, and releases from the Teresa team.</p>
+
+        <div class="profile-card" id="profileCard">
+          <div class="profile-banner"
+            style="background-image: url('https://pbs.twimg.com/profile_banners/1639191425761021952/1784158513/1500x500')"
+          ></div>
+          <div class="profile-body">
+            <div class="profile-avatar-wrap">
+              <img
+                src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg"
+                alt="Teresa Network"
+                class="profile-avatar"
+                loading="lazy"
+                onerror="this.parentElement.querySelector('.avatar-fallback').style.display='flex'; this.style.display='none';"
+              />
+              <div class="avatar-fallback" aria-hidden="true">T</div>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name-row">
+                <span class="profile-name">Teresa</span>
+                <svg class="verified-badge" width="18" height="18" viewBox="0 0 22 22" fill="none" aria-label="Verified"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="#1D9BF0"/></svg>
+              </div>
+              <div class="profile-handle">@teresa_network</div>
+              <p class="profile-bio">AI Trading-Infrastructure built on Robinhood. One layer for routing, governance, and control across every AI provider. Open source.</p>
+              <div class="profile-meta">
+                <span class="meta-item">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-12C3 5.12 4.12 4 5.5 4H7zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7V6zm0 6h2v-2H7v2zm0 4h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm4-4h2v-2h-2v2z"/></svg>
+                  Joined March 2023
+                </span>
+              </div>
+              <div class="profile-follow-stats">
+                <span><strong>10</strong> Following</span>
+                <span><strong>670</strong> Followers</span>
+              </div>
+            </div>
+            <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-follow-profile" id="profileFollowBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Follow on X
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg"
+              alt="Teresa" class="foot-avatar"
+              onerror="this.style.display='none'"
+            />
+            <div>
+              <div class="foot-name">Teresa</div>
+              <div class="foot-handle">@teresa_network</div>
+            </div>
+          </div>
+          <p class="foot-desc">AI Trading-Infrastructure built on Robinhood. One layer for routing, governance, and control.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <h5>Product</h5>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#opensource">Open Source</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="https://x.com/teresa_network" target="_blank">X / Twitter</a></li>
+            <li><a href="https://github.com/teresa-network" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="foot-copy">&copy; 2026 Teresa Network. Open source under MIT License.</p>
+        <div class="foot-social">
+          <a href="https://x.com/teresa_network" target="_blank" aria-label="Follow on X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://github.com/teresa-network" target="_blank" aria-label="GitHub">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
