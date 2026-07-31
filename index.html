@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teresa — The rails were built. We're building what runs on them.</title>
-  <meta name="description" content="We spent weeks studying where tokenized equities actually stand before writing a line of code. Teresa is the AI trading infrastructure built on Robinhood." />
-  <meta property="og:title" content="Teresa — AI Trading Infrastructure on Robinhood" />
-  <meta property="og:description" content="The rails were built. We're building what runs on them." />
+  <title>Teresa — Why We Built Teresa on Robinhood</title>
+  <meta name="description" content="Own the layer where research becomes a decision. Teresa is the multi-agent AI trading desk and terminal built natively on Robinhood Chain." />
+  <meta property="og:title" content="Teresa — Why We Built Teresa on Robinhood" />
+  <meta property="og:description" content="Own the layer where research becomes a decision, and let the settlement layer commoditize underneath you." />
   <meta property="og:image" content="https://pbs.twimg.com/media/HOAa0xfWUAIhUW_.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@teresa_network" />
-  <meta name="virtual-protocol-site-verification" content="5772936b0a90409b28903d36af4f0401" />
+  <link rel="icon" href="assets/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -23,13 +23,11 @@
     <nav class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Teresa home">
         <img
-          src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg"
-          alt="Teresa"
+          src="assets/logo.jpg"
+          alt="Teresa Logo"
           class="logo-avatar"
           loading="eager"
-          onerror="this.style.display='none'; document.querySelector('.logo-fallback').style.display='flex';"
         />
-        <div class="logo-fallback" aria-hidden="true">T</div>
         <div class="logo-text-group">
           <span class="logo-name">Teresa</span>
           <span class="logo-handle">@teresa_network</span>
@@ -37,19 +35,20 @@
       </a>
 
       <div class="nav-links" id="navLinks">
-        <a href="#why"       class="nav-link">Why Robinhood</a>
-        <a href="#tokenized" class="nav-link">Tokenized Equities</a>
-        <a href="#build"     class="nav-link">What We're Building</a>
-        <a href="#community" class="nav-link">Community</a>
+        <a href="#thesis"    class="nav-link">The Thesis</a>
+        <a href="#desk"      class="nav-link">12-Seat AI Desk</a>
+        <a href="#targets"   class="nav-link">3 Core Targets</a>
+        <a href="#economics" class="nav-link">Economics</a>
+        <a href="#article"   class="nav-link">Pete's Article</a>
       </div>
 
       <div class="nav-actions">
-        <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-x-follow" id="xFollowBtn">
+        <a href="https://x.com/peteferr/status/2080692432488759635" target="_blank" rel="noopener" class="btn-x-follow" id="readPeteArticleNav">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          Follow
+          Pete's Article
         </a>
-        <a href="https://x.com/teresa_network/status/2080696325922849169" target="_blank" rel="noopener" class="btn-ghost-sm" id="readPostBtn">
-          Read Post
+        <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-ghost-sm" id="githubBtn">
+          Follow @teresa_network
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -60,14 +59,15 @@
 
   <!-- ===== MOBILE MENU ===== -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#why"       class="mob-link">Why Robinhood</a>
-    <a href="#tokenized" class="mob-link">Tokenized Equities</a>
-    <a href="#build"     class="mob-link">What We're Building</a>
-    <a href="#community" class="mob-link">Community</a>
+    <a href="#thesis"    class="mob-link">The Thesis</a>
+    <a href="#desk"      class="mob-link">12-Seat AI Desk</a>
+    <a href="#targets"   class="mob-link">3 Core Targets</a>
+    <a href="#economics" class="mob-link">Economics</a>
+    <a href="#article"   class="mob-link">Pete's Article</a>
     <div class="mob-sep"></div>
-    <a href="https://x.com/teresa_network" target="_blank" class="mob-link mob-x">
+    <a href="https://x.com/peteferr/status/2080692432488759635" target="_blank" class="mob-link mob-x">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      Follow on X
+      Read Article by Pete (@peteferr)
     </a>
   </div>
 
@@ -75,51 +75,47 @@
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
       <canvas id="neuralCanvas" class="neural-canvas" aria-hidden="true"></canvas>
-      <div class="hero-banner-bg" aria-hidden="true"
-        style="background-image: url('https://pbs.twimg.com/profile_banners/1639191425761021952/1784158513/1500x500')">
-      </div>
 
       <div class="container hero-container">
         <div class="hero-content">
 
-          <!-- Tweet badge -->
-          <a href="https://x.com/teresa_network/status/2080696325922849169" target="_blank" rel="noopener" class="tweet-origin-badge" id="tweetBadge">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            @teresa_network · Jul 24, 2026
+          <!-- Author badge -->
+          <a href="https://x.com/peteferr/status/2080692432488759635" target="_blank" rel="noopener" class="tweet-origin-badge" id="articleAuthorBadge">
+            <img src="assets/logo.jpg" alt="Logo" class="badge-mini-logo" />
+            Pete (@peteferr) · Jul 24, 2026
           </a>
 
           <h1 class="hero-title">
-            The rails were built.<br />
-            <span class="gradient-text">We're building what</span><br />
-            <span class="gradient-text">runs on them.</span>
+            Why We Built Teresa<br />
+            <span class="gradient-text">on Robinhood.</span>
           </h1>
 
           <p class="hero-desc">
-            We spent weeks studying where <strong>tokenized equities</strong> actually stand before writing a line of code. This is what we found — and what we decided to build because of it.
+            "Own the layer where research becomes a decision, and let the settlement layer commoditize underneath you."
           </p>
 
           <div class="hero-cta">
-            <a href="#why" class="btn-primary-hero" id="heroReadMore">
-              Read Why We Built on Robinhood
+            <a href="#thesis" class="btn-primary-hero" id="heroReadThesis">
+              Explore the Thesis
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M13.22 19.03a.75.75 0 010-1.06l5.47-5.47H3.75a.75.75 0 010-1.5h14.94l-5.47-5.47a.75.75 0 011.06-1.06l6.75 6.75a.75.75 0 010 1.06l-6.75 6.75a.75.75 0 01-1.06 0z"/></svg>
             </a>
-            <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-outline-hero">
+            <a href="https://x.com/peteferr/status/2080692432488759635" target="_blank" rel="noopener" class="btn-outline-hero">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              Follow Updates
+              Read Article on X
             </a>
           </div>
 
-          <!-- Tweet engagement stats -->
+          <!-- Article Stats -->
           <div class="tweet-stats-bar">
             <div class="tweet-stat">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
-              <span class="ts-num" data-count="2833">0</span>
+              <span class="ts-num" data-count="5699">0</span>
               <span class="ts-label">Views</span>
             </div>
             <div class="tweet-stat-sep"></div>
             <div class="tweet-stat">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/></svg>
-              <span class="ts-num">17</span>
+              <span class="ts-num">31</span>
               <span class="ts-label">Likes</span>
             </div>
             <div class="tweet-stat-sep"></div>
@@ -128,62 +124,16 @@
               <span class="ts-num">4</span>
               <span class="ts-label">Replies</span>
             </div>
-            <div class="tweet-stat-sep"></div>
-            <div class="tweet-stat ts-date">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-12C3 5.12 4.12 4 5.5 4H7zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7V6zm0 6h2v-2H7v2zm0 4h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm4-4h2v-2h-2v2z"/></svg>
-              <span class="ts-label">Jul 24, 2026 · 4:47 PM</span>
-            </div>
           </div>
         </div>
 
-        <!-- Article card (quoted in tweet) -->
+        <!-- Hero visual / Custom Logo Showcase -->
         <div class="hero-visual">
-          <div class="article-preview-card" id="articleCard">
-            <a href="https://x.com/peteferr/status/2080692432488759635" target="_blank" rel="noopener" class="article-card-link" aria-label="Read: Why we built Teresa on Robinhood">
-              <div class="article-cover-img">
-                <img
-                  src="https://pbs.twimg.com/media/HOAa0xfWUAIhUW_.jpg"
-                  alt="Why we built Teresa on Robinhood — article cover"
-                  loading="eager"
-                  onerror="this.parentElement.style.background='linear-gradient(135deg,#0d1a2e,#0b1420)'; this.style.display='none';"
-                />
-                <div class="article-cover-overlay">
-                  <span class="article-cover-tag">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M21.742 21.75l-7.563-11.179 7.056-8.321h-2.456l-5.691 6.714-4.54-6.714H2.359l7.29 10.776L2.25 21.75h2.456l6.035-7.118 4.818 7.118h6.191-.008zM7.739 3.818L18.81 20.182h-2.447L5.29 3.818h2.447z"/></svg>
-                    Article
-                  </span>
-                </div>
-              </div>
-              <div class="article-card-body">
-                <div class="article-author-row">
-                  <img
-                    src="https://pbs.twimg.com/profile_images/2077831261599522818/FaVop8AC_normal.jpg"
-                    alt="Pete"
-                    class="article-author-avatar"
-                    onerror="this.style.display='none'"
-                  />
-                  <div class="article-author-info">
-                    <span class="article-author-name">
-                      Pete
-                      <svg width="13" height="13" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="#1D9BF0"/></svg>
-                    </span>
-                    <span class="article-author-handle">@peteferr · Jul 24</span>
-                  </div>
-                </div>
-                <h3 class="article-card-title">Why we built Teresa on Robinhood</h3>
-                <p class="article-card-excerpt">We spent weeks studying where tokenized equities actually stand before writing a line of code. This is the short version of that work, and what we decided to build because of it.</p>
-                <div class="article-card-meta">
-                  <span class="acm-item">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8.75 21V3h2v18h-2zM18 21V8.5h2V21h-2zM4 21l.004-10h2L6 21H4zm9.248 0v-7h2v7h-2z"/></svg>
-                    4,370 views
-                  </span>
-                  <span class="acm-item">
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.243.07-2.349.78-2.91 1.91-.552 1.12-.633 2.78.479 4.82 1.074 1.97 3.257 4.27 7.129 6.61 3.87-2.34 6.052-4.64 7.126-6.61 1.111-2.04 1.03-3.7.477-4.82-.561-1.13-1.666-1.84-2.908-1.91zm4.187 7.69c-1.351 2.48-4.001 5.12-8.379 7.67l-.503.3-.504-.3c-4.379-2.55-7.029-5.19-8.382-7.67-1.36-2.5-1.41-4.86-.514-6.67.887-1.79 2.647-2.91 4.601-3.01 1.651-.09 3.368.56 4.798 2.01 1.429-1.45 3.146-2.1 4.796-2.01 1.954.1 3.714 1.22 4.601 3.01.896 1.81.846 4.17-.514 6.67z"/></svg>
-                    35 likes
-                  </span>
-                </div>
-              </div>
-            </a>
+          <div class="logo-hero-card" id="logoCard">
+            <div class="logo-glow-effect"></div>
+            <img src="assets/logo.jpg" alt="Teresa Emblem" class="hero-logo-img" />
+            <div class="logo-card-title">TERESA NETWORK</div>
+            <div class="logo-card-tag">AI Trading Infrastructure · Robinhood Chain</div>
           </div>
         </div>
       </div>
@@ -193,74 +143,110 @@
       </div>
     </section>
 
-    <!-- ===== WHY ROBINHOOD ===== -->
-    <section class="why-section" id="why">
+    <!-- ===== THESIS SECTION ===== -->
+    <section class="why-section" id="thesis">
       <div class="container">
-        <div class="section-label">Why We Built on Robinhood</div>
-        <h2 class="section-heading">The rails were already there.</h2>
-        <p class="section-sub">Robinhood Chain is a permissionless, Ethereum-compatible L2 — built for tokenized equities, AI-agent trading, and on-chain settlement. We studied the market structure for weeks before choosing it.</p>
+        <div class="section-label">1. The Market Structure Read</div>
+        <h2 class="section-heading">The Asymmetry Thesis.</h2>
+        <p class="section-sub">We spent weeks studying where tokenized equities actually stand before writing a single line of code.</p>
 
         <div class="why-grid">
           <div class="why-card" id="wc1">
             <div class="why-card-num">01</div>
-            <h3>Tokenized Equities Are Real</h3>
-            <p>Tokenized stocks on Robinhood Chain are the actual equities market moving on-chain. This isn't a synthetic wrapper — these are real assets with real market structure.</p>
+            <h3>Robinhood Made Equities a Chain</h3>
+            <p>Robinhood moved equities on-chain in 2025: an Arbitrum Orbit L2 with USDG settlement, open enough for venues like Rialto & Ostium to route to it.</p>
           </div>
           <div class="why-card" id="wc2">
             <div class="why-card-num">02</div>
-            <h3>AI Agents Need Infrastructure</h3>
-            <p>An AI model that can analyze, decide, and execute trades needs a unified layer — not a patchwork of broker APIs. We built that layer directly on Robinhood Chain.</p>
+            <h3>The Missing Interface Layer</h3>
+            <p>No native terminal existed for tokenized equities — no charting, analytics, options data, filings, or sentiment. Traders were bridging assets in one tab and reading news in another.</p>
           </div>
           <div class="why-card" id="wc3">
             <div class="why-card-num">03</div>
-            <h3>Governance Matters at Scale</h3>
-            <p>When AI agents trade autonomously, governance isn't optional. Every decision needs audit trails, risk controls, and kill switches. Teresa enforces that natively.</p>
+            <h3>Bloomberg Outlived Every Exchange</h3>
+            <p>History is clear: venues compete their margins away while the interface layer retains pricing power. Bloomberg outlived every exchange it connected to.</p>
           </div>
           <div class="why-card" id="wc4">
             <div class="why-card-num">04</div>
-            <h3>One Layer for Every Provider</h3>
-            <p>OpenAI, Anthropic, Gemini, Llama — each has its own interface. Teresa normalizes them into a single routing layer so your strategy runs across any model.</p>
+            <h3>Where Research Becomes a Decision</h3>
+            <p>Own the layer where research becomes a decision, and let the settlement layer commoditize underneath you. That asymmetry was our thesis.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== TOKENIZED EQUITIES ===== -->
-    <section class="tokenized-section" id="tokenized">
+    <!-- ===== 12-SEAT AI DESK ===== -->
+    <section class="desk-section" id="desk">
+      <div class="container">
+        <div class="section-label">12-Seat AI Multi-Agent Desk</div>
+        <h2 class="section-heading">Structured like an actual trading floor.</h2>
+        <p class="section-sub">Research must end in a position, not a summary. Single models hallucinate numbers — multi-agent debate argues against computed context.</p>
+
+        <div class="desk-grid">
+          <div class="desk-card" id="dc1">
+            <div class="desk-icon cyan-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="2"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h4>Analyst Seats</h4>
+            <p>Dedicated agents reading tape structure, news feeds, market sentiment, and fundamental earnings data in real time.</p>
+          </div>
+
+          <div class="desk-card" id="dc2">
+            <div class="desk-icon blue-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 3v12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Bull & Bear Debaters</h4>
+            <p>Bull and Bear agents running multi-round rebuttals against each other's specific claims, citing computed context instead of vibes.</p>
+          </div>
+
+          <div class="desk-card" id="dc3">
+            <div class="desk-icon purple-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h4>3 Risk Seats</h4>
+            <p>Reprices setups across 3 risk budgets, setting daily sigma stops, VaR, and CVaR derived directly from realized distributions.</p>
+          </div>
+
+          <div class="desk-card" id="dc4">
+            <div class="desk-icon green-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Portfolio Manager (PM)</h4>
+            <p>Commits to a direction-adjusted trade call with target levels and a 21-day probability-weighted scenario tree (p05 to p95).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3 CORE TARGETS ===== -->
+    <section class="tokenized-section" id="targets">
       <div class="container">
         <div class="tokenized-layout">
           <div class="tok-content">
-            <div class="section-label">Tokenized Equities</div>
-            <h2 class="section-heading">The market structure we studied.</h2>
-            <p class="section-sub" style="margin-bottom:32px">Before writing a line of code, we mapped where tokenized equities actually stand — who's building, where liquidity sits, and what's missing at the infrastructure layer.</p>
+            <div class="section-label">The 3 Core Targets</div>
+            <h2 class="section-heading">What we held ourselves to.</h2>
+            <p class="section-sub" style="margin-bottom:32px">From our market read, we established three strict product commitments and built everything around them.</p>
 
             <div class="findings-list">
               <div class="finding-item" id="fi1">
                 <div class="finding-dot cyan-dot"></div>
                 <div>
-                  <strong>Robinhood Chain is live</strong>
-                  <p>A permissionless L2 built on Arbitrum technology, purpose-built for tokenized stocks and AI-agent execution.</p>
+                  <strong>Target 1: Research ends in a position, not a summary</strong>
+                  <p>12-seat floor debating computed context — trend regime, VIX, cross-asset relative strength against SPY, and 21-day projection cones.</p>
                 </div>
               </div>
               <div class="finding-item" id="fi2">
                 <div class="finding-dot blue-dot"></div>
                 <div>
-                  <strong>AI agents lack a control layer</strong>
-                  <p>Existing infrastructure lets agents execute trades but provides no unified routing, governance, or auditability across providers.</p>
+                  <strong>Target 2: Real non-custodial execution</strong>
+                  <p>Perps run long and short with leverage on Ostium. Desk levels draw on charts with 1-click tickets closing the distance to position.</p>
                 </div>
               </div>
               <div class="finding-item" id="fi3">
                 <div class="finding-dot purple-dot"></div>
                 <div>
-                  <strong>The gap is infrastructure, not models</strong>
-                  <p>The AI models that can trade profitably already exist. What's missing is the plumbing that connects them safely to real markets.</p>
-                </div>
-              </div>
-              <div class="finding-item" id="fi4">
-                <div class="finding-dot green-dot"></div>
-                <div>
-                  <strong>That's why we built Teresa</strong>
-                  <p>One routing layer. Full governance. Complete control. Built natively on Robinhood for tokenized equity trading.</p>
+                  <strong>Target 3: Social trading floor</strong>
+                  <p>Wallet-linked profiles, verified handle proofs, invite-only groups, and a live trading feed. Trading is social or it's lonely churn.</p>
                 </div>
               </div>
             </div>
@@ -269,51 +255,38 @@
           <div class="tok-visual">
             <div class="market-map-card" id="mmCard">
               <div class="mm-header">
-                <span class="mm-title">Market Structure</span>
-                <span class="mm-badge">Robinhood Chain</span>
+                <span class="mm-title">Teresa Stack</span>
+                <span class="mm-badge">Robinhood Orbit L2</span>
               </div>
               <div class="mm-layers">
                 <div class="mm-layer top-layer">
-                  <div class="mm-layer-label">AI Models</div>
+                  <div class="mm-layer-label">Research & Debate</div>
                   <div class="mm-chips">
-                    <span class="mm-chip">GPT-4o</span>
-                    <span class="mm-chip">Claude</span>
-                    <span class="mm-chip">Gemini</span>
-                    <span class="mm-chip">Llama</span>
+                    <span class="mm-chip">12-Seat AI Desk</span>
+                    <span class="mm-chip">Computed Context</span>
                   </div>
                 </div>
                 <div class="mm-connector">
                   <div class="mm-conn-line"></div>
-                  <div class="mm-conn-label">Teresa Routing Layer</div>
+                  <div class="mm-conn-label">1-Click Ticket</div>
                   <div class="mm-conn-line"></div>
                 </div>
                 <div class="mm-layer mid-layer">
-                  <div class="mm-layer-label">Teresa</div>
+                  <div class="mm-layer-label">Non-Custodial Terminal</div>
                   <div class="mm-capabilities">
-                    <div class="mm-cap">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41A8 8 0 1 0 20 12h2A10 10 0 1 1 19.07 4.93z"/></svg>
-                      Routing
-                    </div>
-                    <div class="mm-cap">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                      Governance
-                    </div>
-                    <div class="mm-cap">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                      Control
-                    </div>
+                    <div class="mm-cap">Ostium Perps</div>
+                    <div class="mm-cap">Social Feed</div>
                   </div>
                 </div>
                 <div class="mm-connector">
                   <div class="mm-conn-line"></div>
-                  <div class="mm-conn-label">On-chain Execution</div>
+                  <div class="mm-conn-label">USDG Settlement</div>
                   <div class="mm-conn-line"></div>
                 </div>
                 <div class="mm-layer bot-layer">
                   <div class="mm-layer-label">Robinhood Chain</div>
                   <div class="mm-chips">
                     <span class="mm-chip active-chip">Tokenized Stocks</span>
-                    <span class="mm-chip active-chip">DeFi Settlement</span>
                   </div>
                 </div>
               </div>
@@ -323,149 +296,76 @@
       </div>
     </section>
 
-    <!-- ===== WHAT WE'RE BUILDING ===== -->
-    <section class="build-section" id="build">
+    <!-- ===== ECONOMIC LAYER ===== -->
+    <section class="build-section" id="economics">
       <div class="container">
-        <div class="section-label">What We're Building</div>
-        <h2 class="section-heading">Running on the rails.</h2>
-        <p class="section-sub">The Robinhood Chain is the infrastructure. Teresa is the intelligence layer that makes AI-driven trading possible, safe, and auditable on top of it.</p>
+        <div class="section-label">2. The Economic Layer</div>
+        <h2 class="section-heading">Deliberately boring tokenomics.</h2>
+        <p class="section-sub">Supply reduction is a linear function of research demand. Execution fees recycle back into liquidity and tokenized equities.</p>
 
         <div class="build-grid">
           <div class="build-card primary-build-card" id="bc0">
             <div class="build-card-accent"></div>
             <div class="build-card-inner">
               <div class="feat-icon-wrap cyan-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="6" r="2" fill="currentColor"/><circle cx="16" cy="12" r="2" fill="currentColor"/><circle cx="10" cy="18" r="2" fill="currentColor"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               </div>
-              <h3 class="feat-title">AI Trading Router</h3>
-              <p class="feat-desc">One SDK that routes your trading signals across every major AI provider — with automatic failover, load balancing, and cost optimization built in.</p>
-              <div class="feat-mono">teresa.route(signal, { providers: ['gpt-4o', 'claude'] })</div>
+              <h3 class="feat-title">Credit Burn Engine</h3>
+              <p class="feat-desc">The desk runs on credits bought with the token. Spent tokens burn, making supply reduction a linear function of research demand and nothing else.</p>
+              <div class="feat-mono">spent_tokens.burn() // linear burn</div>
             </div>
           </div>
 
           <div class="build-card" id="bc1">
             <div class="build-card-inner">
               <div class="feat-icon-wrap blue-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 15l-3-3h6l-3 3z" fill="currentColor"/></svg>
               </div>
-              <h3 class="feat-title">Governance Engine</h3>
-              <p class="feat-desc">Define and enforce risk parameters, spend limits, allowed tickers, and compliance rules across every AI agent — automatically.</p>
-              <div class="feat-mono">teresa.govern({ maxSpend: 500, riskProfile: 'conservative' })</div>
+              <h3 class="feat-title">Liquidity Recycling</h3>
+              <p class="feat-desc">A portion of execution fees recycles to deepen the token's liquidity pool, so market depth scales with trading volume instead of rented incentives.</p>
+              <div class="feat-mono">recycle_fee → LP_depth</div>
             </div>
           </div>
 
           <div class="build-card" id="bc2">
             <div class="build-card-inner">
-              <div class="feat-icon-wrap purple-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <h3 class="feat-title">Robinhood Execution</h3>
-              <p class="feat-desc">Direct integration with Robinhood Chain for on-chain settlement of tokenized equities — no intermediaries, full audit trail on every trade.</p>
-              <div class="feat-mono">teresa.execute(signal, { chain: 'robinhood' })</div>
-            </div>
-          </div>
-
-          <div class="build-card" id="bc3">
-            <div class="build-card-inner">
               <div class="feat-icon-wrap green-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6M12 3v13M8 8l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
               </div>
-              <h3 class="feat-title">Real-Time Observability</h3>
-              <p class="feat-desc">Live dashboards tracking every AI decision, latency per provider, alpha generation per model, and a complete audit log — all in real time.</p>
-              <div class="feat-mono">teresa.observe({ stream: true, metrics: 'all' })</div>
-            </div>
-          </div>
-
-          <div class="build-card" id="bc4">
-            <div class="build-card-inner">
-              <div class="feat-icon-wrap amber-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </div>
-              <h3 class="feat-title">Kill Switch Controls</h3>
-              <p class="feat-desc">Instant override capability — pause any agent, block any provider, or halt all trading activity with a single call. Full control, always.</p>
-              <div class="feat-mono">teresa.control(agentId, { action: 'halt' })</div>
-            </div>
-          </div>
-
-          <div class="build-card" id="bc5">
-            <div class="build-card-inner">
-              <div class="feat-icon-wrap pink-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <h3 class="feat-title">Open Source</h3>
-              <p class="feat-desc">Built in the open. Inspect the routing logic, audit the governance engine, or fork it for your own stack. AI trading infrastructure for everyone.</p>
-              <div class="feat-mono">github.com/teresa-network</div>
+              <h3 class="feat-title">Stock Airdrop Pool</h3>
+              <p class="feat-desc">Fees market-buy tokenized stocks on Robinhood Chain, which are airdropped to users who earn allocation spots through activity. Real equities funded by real fees.</p>
+              <div class="feat-mono">fees → marketBuy(TokenizedStocks) → Airdrop</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== COMMUNITY / PROFILE ===== -->
-    <section class="community-section" id="community">
+    <!-- ===== PETE'S ARTICLE ===== -->
+    <section class="community-section" id="article">
       <div class="container">
-        <div class="section-label">Community</div>
-        <h2 class="section-heading">Follow the build.</h2>
-        <p class="section-sub">Stay updated on every release, research drop, and market structure finding from the Teresa team — live on X.</p>
+        <div class="section-label">Original Article</div>
+        <h2 class="section-heading">Read the full article on X.</h2>
+        <p class="section-sub">Written by Pete (@peteferr) on July 24, 2026 — outlining the complete vision for Teresa on Robinhood.</p>
 
-        <div class="profile-card" id="profileCard">
-          <div class="profile-banner"
-            style="background-image: url('https://pbs.twimg.com/profile_banners/1639191425761021952/1784158513/1500x500')"
-          ></div>
-          <div class="profile-body">
-            <div class="profile-avatar-wrap">
-              <img
-                src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg"
-                alt="Teresa Network"
-                class="profile-avatar"
-                loading="lazy"
-                onerror="this.parentElement.querySelector('.avatar-fallback').style.display='flex'; this.style.display='none';"
-              />
-              <div class="avatar-fallback" aria-hidden="true">T</div>
-            </div>
-            <div class="profile-info">
-              <div class="profile-name-row">
-                <span class="profile-name">Teresa</span>
-                <svg class="verified-badge" width="18" height="18" viewBox="0 0 22 22" fill="none" aria-label="Verified"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="#1D9BF0"/></svg>
-              </div>
-              <div class="profile-handle">@teresa_network</div>
-              <p class="profile-bio">AI Trading-Infrastructure built on Robinhood. One layer for routing, governance, and control across every AI provider. Open source.</p>
-              <div class="profile-meta">
-                <span class="meta-item">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-12C3 5.12 4.12 4 5.5 4H7zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7V6zm0 6h2v-2H7v2zm0 4h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm4-4h2v-2h-2v2z"/></svg>
-                  Joined March 2023
-                </span>
-              </div>
-              <div class="profile-follow-stats">
-                <span><strong>10</strong> Following</span>
-                <span><strong>673</strong> Followers</span>
-              </div>
-            </div>
-            <a href="https://x.com/teresa_network" target="_blank" rel="noopener" class="btn-follow-profile" id="profileFollowBtn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              Follow on X
-            </a>
-          </div>
-        </div>
-
-        <!-- The original tweet embed-style -->
+        <!-- Original Tweet Card -->
         <div class="original-tweet-card" id="originalTweetCard">
           <div class="otc-header">
-            <img src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg" alt="Teresa" class="otc-avatar" />
+            <img src="assets/logo.jpg" alt="Logo" class="otc-avatar" />
             <div class="otc-author">
-              <span class="otc-name">Teresa <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="#1D9BF0"/></svg></span>
-              <span class="otc-handle">@teresa_network</span>
+              <span class="otc-name">Pete <svg width="14" height="14" viewBox="0 0 22 22" fill="none"><path d="M20.396 11c-.018-.646-.215-1.275-.57-1.816-.354-.54-.852-.972-1.438-1.246.223-.607.27-1.264.14-1.897-.131-.634-.437-1.218-.882-1.687-.47-.445-1.053-.75-1.687-.882-.633-.13-1.29-.083-1.897.14-.273-.587-.704-1.086-1.245-1.44S11.647 1.62 11 1.604c-.646.017-1.273.213-1.813.568s-.969.854-1.24 1.44c-.608-.223-1.267-.272-1.902-.14-.635.13-1.22.436-1.69.882-.445.47-.749 1.055-.878 1.688-.13.633-.08 1.29.144 1.896-.587.274-1.087.705-1.443 1.245-.356.54-.555 1.17-.574 1.817.02.647.218 1.276.574 1.817.356.54.856.972 1.443 1.245-.224.606-.274 1.263-.144 1.896.13.634.433 1.218.877 1.688.47.443 1.054.747 1.687.878.633.132 1.29.084 1.897-.136.274.586.705 1.084 1.246 1.439.54.354 1.17.551 1.816.569.647-.016 1.276-.213 1.817-.567s.972-.854 1.245-1.44c.604.239 1.266.296 1.903.164.636-.132 1.22-.447 1.68-.907.46-.46.776-1.044.908-1.681s.075-1.299-.165-1.903c.586-.274 1.084-.705 1.439-1.246.354-.54.551-1.17.569-1.816zM9.662 14.85l-3.429-3.428 1.293-1.302 2.072 2.072 4.4-4.794 1.347 1.246z" fill="#1D9BF0"/></svg></span>
+              <span class="otc-handle">@peteferr</span>
             </div>
-            <a href="https://x.com/teresa_network/status/2080696325922849169" target="_blank" rel="noopener" class="otc-x-link" aria-label="View on X">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <a href="https://x.com/peteferr/status/2080692432488759635" target="_blank" rel="noopener" class="otc-x-link" aria-label="View on X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.264 5.638L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             </a>
           </div>
-          <p class="otc-text">"The rails were built. We're building what runs on them."</p>
-          <div class="otc-meta">4:47 PM · Jul 24, 2026</div>
+          <p class="otc-text">"Why we built Teresa on Robinhood — We spent weeks studying where tokenized equities actually stand before writing a line of code..."</p>
+          <div class="otc-meta">4:31 PM · Jul 24, 2026</div>
           <div class="otc-stats">
             <span>4 Replies</span>
-            <span>17 Likes</span>
-            <span>2,833 Views</span>
+            <span>31 Likes</span>
+            <span>5,699 Views</span>
           </div>
         </div>
       </div>
@@ -478,28 +378,28 @@
       <div class="footer-top">
         <div class="footer-brand">
           <div class="footer-logo">
-            <img src="https://pbs.twimg.com/profile_images/2082408104096866304/5GZ9mSHb_400x400.jpg"
-              alt="Teresa" class="foot-avatar" onerror="this.style.display='none'" />
+            <img src="assets/logo.jpg" alt="Teresa" class="foot-avatar" />
             <div>
               <div class="foot-name">Teresa</div>
               <div class="foot-handle">@teresa_network</div>
             </div>
           </div>
-          <p class="foot-desc">AI Trading-Infrastructure built on Robinhood. The rails were built. We're building what runs on them.</p>
+          <p class="foot-desc">AI Trading Infrastructure on Robinhood Chain. Own the layer where research becomes a decision.</p>
         </div>
         <div class="footer-links-group">
           <h5>Explore</h5>
           <ul>
-            <li><a href="#why">Why Robinhood</a></li>
-            <li><a href="#tokenized">Tokenized Equities</a></li>
-            <li><a href="#build">What We're Building</a></li>
+            <li><a href="#thesis">The Thesis</a></li>
+            <li><a href="#desk">12-Seat AI Desk</a></li>
+            <li><a href="#targets">3 Core Targets</a></li>
+            <li><a href="#economics">Economics</a></li>
           </ul>
         </div>
         <div class="footer-links-group">
           <h5>Connect</h5>
           <ul>
             <li><a href="https://x.com/teresa_network" target="_blank">X / Twitter</a></li>
-            <li><a href="https://x.com/teresa_network/status/2080696325922849169" target="_blank">Original Post</a></li>
+            <li><a href="https://x.com/peteferr/status/2080692432488759635" target="_blank">Pete's Article</a></li>
             <li><a href="https://github.com/teresa-network" target="_blank">GitHub</a></li>
           </ul>
         </div>
