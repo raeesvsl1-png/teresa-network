@@ -53,8 +53,8 @@ const revealObs = new IntersectionObserver((entries, obs) => {
 
 [
   '.tweet-origin-badge', '.hero-title', '.hero-desc', '.hero-cta',
-  '.tweet-stats-bar', '.article-preview-card', '.why-card', '.finding-item',
-  '.market-map-card', '.build-card', '.profile-card', '.original-tweet-card',
+  '.tweet-stats-bar', '.logo-hero-card', '.why-card', '.desk-card', '.finding-item',
+  '.market-map-card', '.build-card', '.original-tweet-card',
   '.section-label', '.section-heading', '.section-sub'
 ].forEach(sel => {
   document.querySelectorAll(sel).forEach((el, i) => {
@@ -151,7 +151,7 @@ statEls.forEach(el => counterObs.observe(el));
 })();
 
 // ── Card glow on hover ────────────────────
-document.querySelectorAll('.build-card, .why-card').forEach(card => {
+document.querySelectorAll('.build-card, .why-card, .desk-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
     const x = ((e.clientX - r.left) / r.width  * 100).toFixed(1);
